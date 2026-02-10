@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>I - MART – Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  </head>
+
+  <body onload="changeBgImageTitlePara()">
+    <!-- Navigation Header -->
+    <header>
+      <div id="nav">
+        <!-- Brand Logo -->
+        <div id="brand">
+          <h1>I<span>-</span>MART</h1>
+        </div>
+
+        <!-- Menu Links -->
+        <div id="menus">
+          <a href="index.html" class="active">Home</a>
+          <a href="profile.html">Profile</a>
+          <a href="products.html">Products</a>
+          <a href="contactus.html">Contact</a>
+        </div>
+
+        <!-- Action Icons -->
+        <div id="icons">
+          <a href="cart.html" title="Cart">
+            <i class="bi bi-bag"></i>
+            <span id="cart-badge" style="display: none;">0</span>
+          </a>
+          <a href="#" title="Sign out">
+            <i class="bi bi-power"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="hero">
+        <!-- Left: Content -->
+        <div class="hero-content">
+          <p class="hero-label" id="hero-label">
+            <i class="bi bi-star-fill"></i>
+            New Collection 2025
+          </p>
+
+          <h1 class="hero-title" id="title">
+            Spark Big Smiles<br>with Every
+            <em>Playtime</em>
+          </h1>
+
+          <p class="hero-desc">
+            Discover a curated range of kids products designed to nurture
+            creativity, learning, and joyful play. Each item is crafted with
+            safety, durability, and imagination in mind.
+          </p>
+
+          <div class="hero-actions">
+            <a href="products.html" class="btn-primary">
+              <i class="bi bi-grid-3x3-gap"></i>
+              Shop Now
+            </a>
+            <a href="contactus.html" class="btn-ghost">
+              Learn More
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="feature-pills">
+            <span class="pill">
+              <i class="bi bi-shield-check"></i>
+              Safe Materials
+            </span>
+            <span class="pill">
+              <i class="bi bi-truck"></i>
+              Free Shipping
+            </span>
+            <span class="pill">
+              <i class="bi bi-arrow-repeat"></i>
+              Easy Returns
+            </span>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-num">2.4k+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">98%</div>
+              <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">150+</div>
+              <div class="stat-label">Brands</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Image -->
+        <div class="hero-image">
+          <img
+            id="hero-img"
+            src="https://img.freepik.com/premium-photo/children-s-toys-beige-background-with-copy-space-multicolored-wooden-plush-toys-toddler-baby-eco-friendly-toy-plastic-free-empty-space-your-text-advertising-3d-rendering_429124-3143.jpg?w=2000"
+            alt="Featured Products"
+          />
+
+          <!-- Floating badge -->
+          <div class="hero-badge">
+            <div class="badge-icon">
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <div class="badge-text">
+              <strong>Top Rated</strong>
+              <span>4.9 / 5.0 – 12k reviews</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+      /**
+       * Update cart badge on page load
+       */
+      document.addEventListener("DOMContentLoaded", function() {
+        const carts = JSON.parse(localStorage.getItem("carts")) || [];
+        const cartBadge = document.getElementById("cart-badge");
+        
+        if (cartBadge) {
+          if (carts.length > 0) {
+            cartBadge.textContent = carts.length;
+            cartBadge.style.display = "flex";
+          } else {
+            cartBadge.style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

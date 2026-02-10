@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I-MART – Contact</title>
+    <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <style>
+      main {
+        overflow-y: auto;
+        background: var(--bg-secondary);
+      }
+
+      /* Page Header */
+      .contact-hero {
+        background: var(--bg-primary);
+        border-bottom: 1px solid var(--border);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .contact-hero h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.02em;
+      }
+
+      .contact-hero p {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Body Layout */
+      .contact-body {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      /* Info Panel */
+      .info-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .info-card {
+        background: var(--bg-primary);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        transition: var(--transition);
+      }
+
+      .info-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+
+      .info-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius-md);
+        background: var(--bg-tertiary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        color: var(--primary);
+        flex-shrink: 0;
+      }
+
+      .info-content {
+        flex: 1;
+      }
+
+      .info-content strong {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .info-content p {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* Form Card */
+      .form-card {
+        background: var(--bg-primary);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 2.5rem;
+        box-shadow: var(--shadow-md);
+      }
+
+      .form-card h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+      }
+
+      .form-card > p {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        outline: none;
+        font-size: 0.875rem;
+        font-family: 'Inter', sans-serif;
+        color: var(--text-primary);
+        background: var(--bg-primary);
+        transition: var(--transition);
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      .form-group textarea {
+        resize: none;
+        height: 120px;
+        line-height: 1.6;
+      }
+
+      .submit-btn {
+        width: 100%;
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 1rem;
+        border-radius: var(--radius-md);
+        font-size: 0.938rem;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+        margin-top: 0.5rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .submit-btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .contact-body {
+          grid-template-columns: 1fr;
+          padding: 2rem 1.5rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .contact-hero {
+          padding: 2rem 1.5rem;
+        }
+
+        .contact-hero h1 {
+          font-size: 2rem;
+        }
+
+        .form-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation Header -->
+    <header>
+      <div id="nav">
+        <!-- Brand Logo -->
+        <div id="brand">
+          <h1>I<span>-</span>MART</h1>
+        </div>
+
+        <!-- Menu Links -->
+        <div id="menus">
+          <a href="index.html">Home</a>
+          <a href="profile.html">Profile</a>
+          <a href="products.html">Products</a>
+          <a href="contactus.html" class="active">Contact</a>
+        </div>
+
+        <!-- Action Icons -->
+        <div id="icons">
+          <a href="cart.html" title="Cart">
+            <i class="bi bi-bag"></i>
+            <span id="cart-badge" style="display: none;">0</span>
+          </a>
+          <a href="#" title="Sign out">
+            <i class="bi bi-power"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero -->
+      <div class="contact-hero">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Reach out for inquiries, support, or collaboration opportunities.</p>
+      </div>
+
+      <!-- Content Body -->
+      <div class="contact-body">
+        <!-- Info Panel -->
+        <div class="info-panel">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <div class="info-content">
+              <strong>Our Address</strong>
+              <p>123 Business Avenue<br>New York, NY 10001, USA</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="bi bi-envelope"></i>
+            </div>
+            <div class="info-content">
+              <strong>Email Us</strong>
+              <p>hello@imart.com<br>support@imart.com</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="bi bi-telephone"></i>
+            </div>
+            <div class="info-content">
+              <strong>Call Us</strong>
+              <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="bi bi-clock"></i>
+            </div>
+            <div class="info-content">
+              <strong>Working Hours</strong>
+              <p>Mon – Fri: 9:00 – 18:00<br>
+              Saturday: 10:00 – 16:00<br>
+              Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="form-card">
+          <h2>Send a Message</h2>
+          <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+
+          <form onsubmit="return false">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="John" />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="you@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="How can we help?" />
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Write your message here..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i class="bi bi-send"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+      /**
+       * Update cart badge on page load
+       */
+      document.addEventListener("DOMContentLoaded", function() {
+        const carts = JSON.parse(localStorage.getItem("carts")) || [];
+        const cartBadge = document.getElementById("cart-badge");
+        
+        if (cartBadge) {
+          if (carts.length > 0) {
+            cartBadge.textContent = carts.length;
+            cartBadge.style.display = "flex";
+          } else {
+            cartBadge.style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
